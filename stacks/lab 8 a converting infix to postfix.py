@@ -44,11 +44,12 @@ for i in infix:
              
              elif (len(stack)==0) or (((i in lower_precedence) and (stack[-1] in higher_precedence or stack[-1] in highest_precedence )))or(i in higher_precedence and stack[-1] in highest_precedence):
                 postfix+=stack.pop()
-
+                
              elif (len(stack)==0) or (i in lower_precedence and stack[-1] in lower_precedence)or(i in higher_precedence and stack[-1] in higher_precedence)or(i in highest_precedence and stack[-1] in highest_precedence):
                  if i in associativity_L_R:
                      postfix+=stack.pop()
                      stack.append(i)
+                     break
 
                  elif i in associativity_R_L:
                      stack.append(i)
@@ -59,13 +60,13 @@ while len(stack)!=0:
     postfix+=pop_till_empty
 
                  
-print(postfix)
+final_postfix = ""
+for i in postfix:
+    if i !='(' and i!=')':
+        final_postfix += i 
 
 
-
-
-
-
+print('your postfix expression is:',final_postfix)
 
 
 
