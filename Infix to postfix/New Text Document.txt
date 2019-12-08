@@ -1,0 +1,6 @@
+
+we use stack because there is no need of scanning again and again the 
+equation
+
+using stacks we are supposed to convert infix to postfix in a single iteration 
+
